@@ -1,9 +1,26 @@
-import Spline from '@splinetool/react-spline';
+import { lazy, Suspense, memo, useState } from "react"
 
-export default function Jarvis() {
+const Spline = lazy(() => import("@splinetool/react-spline"))
+
+const Jarvis = memo(function Jarvis() {
+  const [loaded, setLoaded] = useState(false)
+
+  const dismiss = () => setLoaded(true)
+
   return (
-    <div className="spline-scene  ">
-      <Spline scene="https://prod.spline.design/aDCBl92mDMa7wFOh/scene.splinecode" />
+    <div className="spline-scene relative min-h-64">
+      <div className={`absolute inset-0 z-10 flex items-center justify-center bg-black/60 rounded-2xl transition-opacity duration-500 ${loaded ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+        <div className="w-8 h-8 border-2 border-[#10e0fe] border-t-transparent rounded-full animate-spin" />
+      </div>
+      <Suspense fallback={null}>
+        <Spline
+          scene="https://prod.spline.design/aDCBl92mDMa7wFOh/scene.splinecode"
+          onLoad={dismiss}
+          onError={dismiss}
+        />
+      </Suspense>
     </div>
-  );
-}
+  )
+})
+
+export default Jarvis

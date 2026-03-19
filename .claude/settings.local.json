@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(node_modules/.bin/vite.cmd)",
+      "Bash(echo \"Exit: $?\")",
+      "Bash(timeout 10 node_modules/.bin/vite)",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "Bash(npx tsc:*)"
+    ]
+  }
+}
