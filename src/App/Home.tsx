@@ -4,6 +4,7 @@ import Header from '../Components/Global/Header.tsx'
 import Home from '../Components/Home/Home.tsx'
 import About_me from '../Components/Home/About_me.tsx'
 import Projects from '../Components/Home/Projecs.tsx'
+import CaseStudies from '../Components/Home/CaseStudies.tsx'
 import Experiences from '../Components/Home/Experiences.tsx'
 import Services from '../Components/Home/Services.tsx'
 import Footer from '../Components/Global/Footer.tsx'
@@ -28,6 +29,10 @@ function Home_Main() {
 
             <div id="projects">
         <Projects />
+      </div>
+
+      <div id="cases">
+        <CaseStudies />
       </div>
 
       <div id="about">
