@@ -1,15 +1,15 @@
-import { motion } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 import Logo_ig from "../Icons/Logo_instagram";
 import Logo_mail from "../Icons/Logo_instagram copy";
 import Logo_LinkedIn from "../Icons/Logo_LinkedIn";
 import Logo_wha from "../Icons/Logo_whatsapp";
 
-const iconVariant = {
+const iconVariant: Variants = {
   hidden: { opacity: 0, y: 16 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" },
+    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" as const },
   }),
 }
 
