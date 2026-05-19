@@ -22,14 +22,18 @@ const Home = () => {
       </motion.div>
 
       <motion.div
-  className="text-6xl md:text-9xl font-semibold mt-4 md:mt-8 w-1/2"
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-  viewport={{ once: true }}
->
-  <ArcovXrIcon/>
-</motion.div>
+        className="relative mt-4 md:mt-8 w-2/3 md:w-1/2"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+        viewport={{ once: true }}
+      >
+        <div
+          className="absolute -z-10 top-1/2 left-0 -translate-y-1/2 w-full h-10 blur-3xl rounded-full opacity-25"
+          style={{ background: "#10e0fe" }}
+        />
+        <ArcovXrIcon width="100%" height="auto" />
+      </motion.div>
 
 
       <motion.div
